@@ -61,7 +61,7 @@ const SVG: React.FC<SVGProps> = ({
     };
 
     loadAndModifySVG();
-  }, [path, fillColor]);
+  }, [path, height, width, fillColor]);
 
   return <div ref={container} className={className} />;
 };
