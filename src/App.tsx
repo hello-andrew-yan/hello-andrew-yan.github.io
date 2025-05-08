@@ -1,16 +1,24 @@
-import logo from '/cube.svg'
 import './App.css'
+import SVG from './components/SVG';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [fillColor, setFillColor] = useState('#ff0000');
 
   return (
-    <>
-      <div>
-        <img src={logo} className="logo react" alt="Site Logo" />
-      </div>
-      <h1>Andrew Yan</h1>
-    </>
-  )
-}
+    <div>
+      <SVG 
+        path="/react.svg"
+        className='logo' 
+        height="6rem" 
+        width="6rem" 
+        fillColor={fillColor} 
+      />
 
-export default App
+      <button onClick={() => setFillColor('#00ff00')}>Green</button>
+      <button onClick={() => setFillColor('#0000ff')}>Blue</button>
+    </div>
+  );
+};
+
+export default App;
